@@ -1,4 +1,4 @@
-# SparkChess 1.4.0 Hotfix1 Build & Tuning Manual
+# SparkChess 1.4.1 Build & Tuning Manual
 
 SparkChess is a high-performance chess engine compliant with the Universal Chess Interface (UCI) protocol, featuring an evaluation module that supports both offline Texel evaluation optimization and online SPSA search parameter tuning.
 
