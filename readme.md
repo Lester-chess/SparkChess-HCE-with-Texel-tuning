@@ -1,6 +1,7 @@
 # SparkChess 2.0 Build & Tuning Manual
 
 SparkChess is a high-performance chess engine compliant with the Universal Chess Interface (UCI) protocol, featuring an evaluation module that supports both offline Texel evaluation optimization and online SPSA search parameter tuning.
+[![Stockfish](https://img.shields.io/badge/Engine_Core-Stockfish_11-3776AB?style=for-the-badge&logo=lichess&logoColor=white)](https://github.com/official-stockfish/Stockfish)
 
 ---
 
