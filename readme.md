@@ -6,6 +6,12 @@
   <h1>SparkChess 2.0 (HCE)</h1>
   <p>A lite chess engine with HCE</p>
   <p>Supported:Android OEX /Windows</p>
+  <!-- Windows 平台徽章 -->
+
+  [![Platform - Windows](https://img.shields.io/badge/platform-Windows-0078D4?logo=windows&logoColor=white)](https://github.com/USERNAME/REPO/releases)
+
+<!-- Android 平台徽章 -->
+[![Platform - Android](https://img.shields.io/badge/platform-Android-34A853?logo=android&logoColor=white)](https://github.com/USERNAME/REPO/releases)
 </div>
 
 <!-- 最新 Release 版本 -->
