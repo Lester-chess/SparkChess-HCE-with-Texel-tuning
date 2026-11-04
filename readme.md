@@ -1,7 +1,7 @@
 # SparkChess 2.0 Build & Tuning Manual
 
 <!-- GitHub Actions 测试状态 -->
-![tests](https://img.shields.io/github/actions/workflow/status/Lester-chess/Sparkchess-HCE-with-Texel-tuning/ci.yml?branch=main&logo=github&label=tests)
+![tests](https://github.com/USERNAME/REPO/actions/workflows/ci.yml/badge.svg?branch=main)
 
 <!-- 最新 Release 版本 -->
 ![release](https://img.shields.io/github/v/release/Lester-chess/Sparkchess-HCE-with-Texel-tuning?label=release)
