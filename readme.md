@@ -1,5 +1,25 @@
 # SparkChess 2.0 Build & Tuning Manual
 
+<!-- GitHub Actions 测试状态 -->
+![tests](https://img.shields.io/github/actions/workflow/status/Lester-chess/Sparkchess-HCE-with-Texel-tuning/ci.yml?branch=main&logo=github&label=tests)
+
+<!-- 最新 Release 版本 -->
+![release](https://img.shields.io/github/v/release/Lester-chess/Sparkchess-HCE-with-Texel-tuning?label=release)
+
+<!-- 开源协议 License -->
+![license](https://img.shields.io/github/license/Lester-chess/Sparkchess-HCE-with-Texel-tuning)
+<!-- Lichess Classical -->
+![Lichess Classical](https://img.shields.io/badge/dynamic/json?color=0080ff&label=Lichess%20Classical&logo=lichess&query=%24.perfs.classical.rating&url=https%3A%2F%2Flichess.org%2Fapi%2Fuser%2FBOT_Sparkchessengine)
+
+<!-- Lichess Rapid -->
+![Lichess Rapid](https://img.shields.io/badge/dynamic/json?color=0080ff&label=Lichess%20Rapid&logo=lichess&query=%24.perfs.rapid.rating&url=https%3A%2F%2Flichess.org%2Fapi%2Fuser%2FBOT_Sparkchessengine)
+
+<!-- Lichess Blitz -->
+![Lichess Blitz](https://img.shields.io/badge/dynamic/json?color=0080ff&label=Lichess%20Blitz&logo=lichess&query=%24.perfs.blitz.rating&url=https%3A%2F%2Flichess.org%2Fapi%2Fuser%2FBOT_Sparkchessengine)
+
+<!-- Lichess Bullet -->
+![Lichess Bullet](https://img.shields.io/badge/dynamic/json?color=0080ff&label=Lichess%20Bullet&logo=lichess&query=%24.perfs.bullet.rating&url=https%3A%2F%2Flichess.org%2Fapi%2Fuser%2FBOT_Sparkchessengine)
+
 SparkChess is a high-performance chess engine compliant with the Universal Chess Interface (UCI) protocol, featuring an evaluation module that supports both offline Texel evaluation optimization and online SPSA search parameter tuning.
 [![Stockfish](https://img.shields.io/badge/Engine_Core-Stockfish_11-3776AB?style=for-the-badge&logo=lichess&logoColor=white)](https://github.com/official-stockfish/Stockfish)
 
