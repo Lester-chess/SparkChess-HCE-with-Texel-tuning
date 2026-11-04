@@ -5,6 +5,7 @@
   <img src="./86245edf-5bf5-404a-a5c6-a809089cd31f.jpg" alt="SparkChess Logo" width="160" style="border-radius: 20%;">
   <h1>SparkChess 2.0 (HCE)</h1>
   <p>A lite chess engine with HCE</p>
+  <p>Supported:Android OEX /Windows</p>
 </div>
 
 <!-- 最新 Release 版本 -->
