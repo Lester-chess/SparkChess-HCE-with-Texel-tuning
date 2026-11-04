@@ -1,5 +1,11 @@
 # SparkChess 2.0 Build & Tuning Manual
 
+
+<div align="center">
+  <img src="./86245edf-5bf5-404a-a5c6-a809089cd31f.jpg" alt="SparkChess Logo" width="160" style="border-radius: 20%;">
+  <h1>SparkChess 2.0 (HCE)</h1>
+  <p>A lite chess engine with HCE</p>
+</div>
 <!-- 最新 Release 版本 -->
 ![release](https://img.shields.io/github/v/release/Lester-chess/Sparkchess-HCE-with-Texel-tuning?label=release)
 
