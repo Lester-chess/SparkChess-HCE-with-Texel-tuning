@@ -1,10 +1,10 @@
-# SparkChess 2.0 Build & Tuning Manual
+# SparkChess 3.0 Manuel
 
 
 <div align="center">
   <img src="./86245edf-5bf5-404a-a5c6-a809089cd31f.jpg" alt="SparkChess Logo" width="160" style="border-radius: 20%;">
-  <h1>SparkChess 2.0 (HCE)</h1>
-  <p>A lite chess engine with HCE</p>
+  <h1>SparkChess 3.0.20261106</h1>
+  <p>A lite chess engine with NNUE</p>
   <p>Supported:Android OEX /Windows</p>
   <!-- Windows 平台徽章 -->
 
@@ -31,9 +31,8 @@
 <!-- Lichess Bullet -->
 ![Lichess Bullet](https://img.shields.io/badge/dynamic/json?color=0080ff&label=Lichess%20Bullet&logo=lichess&query=%24.perfs.bullet.rating&url=https%3A%2F%2Flichess.org%2Fapi%2Fuser%2FSparkchessengine)
 
-[![Stockfish](https://img.shields.io/badge/Engine_Core-Stockfish_11-3776AB?style=for-the-badge&logo=lichess&logoColor=white)](https://github.com/official-stockfish/Stockfish)
 
-SparkChess is a high-performance chess engine compliant with the Universal Chess Interface (UCI) protocol, featuring an evaluation module that supports both offline Texel evaluation optimization and online SPSA search parameter tuning.
+SparkChess is a high-performance chess engine compliant with the Universal Chess Interface (UCI) protocol, featuring lite HalfkAv2 NNUE eval.
 
 
 ---
@@ -93,70 +92,9 @@ quit                      # Terminate the engine
 
 ---
 
-## 3. Texel Tuning (Evaluation Tuning)
+## 
 
-Texel Tuning optimizes handcrafted evaluation function parameters (e.g., Piece Values, Piece-Square Tables, Pawn Structure bonuses) against game outcomes ($R \in \{0.0, 0.5, 1.0\}$) by minimizing the Mean Squared Error:
 
-$$\text{Loss} = \frac{1}{N} \sum_{i=1}^{N} \left( R_i - \sigma(K \cdot E_i) \right)^2$$
-
-### 3.1 Command Syntax
-```text
-tune texel <dataset.pgn> <epochs> <learning_rate> <output_weights.bin> <start_from_checkpoint>
-```
-
-### 3.2 Parameter Descriptions
-- `<dataset.pgn>`: Path to a collection of quiet, decisive games (e.g., `long_decided_games.pgn`).
-- `<epochs>`: Number of iterations over the full dataset (typical: `20`–`50`; `100` for vast datasets).
-- `<learning_rate>`: Step size for gradient updates (e.g., `0.004` or `0.001` depending on the optimizer).
-- `<output_weights.bin>`: Path to save the optimized evaluation weights.
-- `<start_from_checkpoint>`: `0` to initialize from current defaults; `1` to resume from the target binary file.
-
-### 3.3 Execution Example
-```text
-tune texel long_decided_games.bare.[21951].pgn 10 0.002 HCE1.bin 0
-```
-
-### 3.4 Operational Notes
-- **Loading Latency**: Parsing large PGN files (e.g., 20,000+ games) may take several minutes before `Epoch 1/10` appears.
-- **CPU Utilization**: Ensure multi-threading is enabled so that feature extraction scales across all available cores.
-
----
-
-## 4. SPSA Tuning (Search & Tactical Tuning)
-
-Simultaneous Perturbation Stochastic Approximation (SPSA) tunes continuous search heuristics (e.g., Late Move Reductions, Futility Pruning margins, Null Move parameters) by playing self-play games under tight time controls.
-
-### 4.1 Prerequisites
-- **Cutechess-CLI** or **Fastchess** installed.
-- A standardized opening book (e.g., `8moves_v3.pgn` or `UHO_XXL_2022.epd`).
-- SPSA harness script (Python or shell wrapper).
-
-### 4.2 SPSA Configuration Workflow
-
-1. **Expose Parameters via UCI Options**:
-   Ensure search parameters are exposed in `sparkchess` via UCI:
-   ```text
-   option name LMR_Base type spin default 75 min 40 max 120
-   option name NMP_DepthReduction type spin default 3 min 1 max 6
-   ```
-
-2. **Define SPSA Hyperparameters**:
-   - Number of iterations ($N$): `5000`–`20000` games.
-   - Perturbation factor ($c$): Step width for gradient estimation.
-   - Learning rate decay ($a, A, \alpha$).
-
-3. **Running the Cutechess Match Loop**:
-   ```bash
-   python3 spsa_tune.py \
-       --engine "./bin/sparkchess" \
-       --book "books/8moves_v3.pgn" \
-       --games 10000 \
-       --threads 10 \
-       --tc "10+0.1" \
-       --spsa-config "spsa_params.json"
-   ```
-
----
 
 ## 5. Validation & Elo Testing (SPRT)
 
