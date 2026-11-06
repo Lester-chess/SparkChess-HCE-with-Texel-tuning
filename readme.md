@@ -1,4 +1,4 @@
-# SparkChess 3.0 Manuel
+# SparkChess 3.0 Manual
 
 
 <div align="center">
