@@ -199,7 +199,7 @@ Once the virtual environment is successfully activated (you will see `(your_env_
 
 ## 4. Validation & Elo Testing (SPRT)
 
-Once Texel or SPSA tuning is complete, validate that the updated weights produce a measurable Elo increase using Sequential Probability Ratio Testing (SPRT):
+Validate that the updated weights produce a measurable Elo increase using Sequential Probability Ratio Testing (SPRT):
 
 ```bash
 cutechess-cli \
@@ -379,7 +379,7 @@ quit                      # 终止并退出引擎
 
 ## 4. 验证与 Elo 测试 (SPRT)
 
-完成 Texel 或 SPSA 调优后，使用序贯概率比检验（SPRT）来验证更新后的权重是否能带来可观的 Elo 等级分提升：
+使用序贯概率比检验（SPRT）来验证更新后的权重是否能带来可观的 Elo 等级分提升：
 
 ```bash
 cutechess-cli \
